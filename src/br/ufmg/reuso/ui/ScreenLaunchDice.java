@@ -112,7 +112,7 @@ public class ScreenLaunchDice extends JDialog implements ActionListener{
 		Tpanel.add(LabelInfo2);
 		
 		// Botão de lançar os dados		
-		JButton buttonLaunch = new JButton("Lançar Dados");
+		JButton buttonLaunch = new JButton("Lan�ar Dados");
 		buttonLaunch.setMnemonic(KeyEvent.VK_L);
 		buttonLaunch.setActionCommand("OK");
 		buttonLaunch.setPreferredSize(dimensionButton);

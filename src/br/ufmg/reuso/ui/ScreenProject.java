@@ -175,12 +175,12 @@ public class ScreenProject extends JDialog implements ActionListener {
 		JList listModules = new JList(modules);
 		listModules.setBounds(410, y, 380, 180);
 		listModules.setBorder(BorderFactory.createTitledBorder(border,
-				"MÃ³dulos", TitledBorder.LEFT, TitledBorder.ABOVE_TOP, font16));
+				"Módulos", TitledBorder.LEFT, TitledBorder.ABOVE_TOP, font16));
 		listModules.setFont(font16);
 		panel.add(listModules);
 
 		String nomes[] = new String[] { "Complexidade", "Tamanho", "Qualidade",
-				"Orcamento" };
+				"Orçamento" };
 		JLabel lblData;
 
 		int i;

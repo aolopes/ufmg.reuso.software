@@ -156,7 +156,7 @@ public class ScreenInspectArtefacts extends JDialog implements ActionListener {
 		int bons = ScreenInteraction.ARTEFATOS_BONS;
 		int ruins = ScreenInteraction.ARTEFATOS_RUINS;
 
-		String[] nomes = new String[] { "Requisitos", "Desenhos", "C贸digo",
+		String[] nomes = new String[] { "Requisitos", "Desenhos", "C骴igo",
 				"Rastros", "Ajudas" };
 
 		int valor = 0;
@@ -175,7 +175,7 @@ public class ScreenInspectArtefacts extends JDialog implements ActionListener {
 
 			} else if (nomes[i].equalsIgnoreCase("Desenhos")) {
 				valor = modulo[bons].getDesenhos();
-			} else if (nomes[i].equalsIgnoreCase("C贸digo")) {
+			} else if (nomes[i].equalsIgnoreCase("C骴igo")) {
 				valor = modulo[bons].getCodigos();
 			} else if (nomes[i].equalsIgnoreCase("Rastros")) {
 				valor = modulo[bons].getRastros();
@@ -201,7 +201,7 @@ public class ScreenInspectArtefacts extends JDialog implements ActionListener {
 				valor = modulo[ruins].getRequisitos();
 			} else if (nomes[i].equalsIgnoreCase("Desenhos")) {
 				valor = modulo[ruins].getDesenhos();
-			} else if (nomes[i].equalsIgnoreCase("C贸digo")) {
+			} else if (nomes[i].equalsIgnoreCase("C骴igo")) {
 				valor = modulo[ruins].getCodigos();
 			} else if (nomes[i].equalsIgnoreCase("Rastros")) {
 				valor = modulo[ruins].getRastros();
@@ -333,7 +333,7 @@ public class ScreenInspectArtefacts extends JDialog implements ActionListener {
 			int soma = Integer.parseInt(labelTotal.getText());
 
 			if (soma > habilidade) {
-				String messager = "Seu engenheiro tem menos habilidade do que 茅 necess谩rio para a tarefa. \n"
+				String messager = "Seu engenheiro tem menos habilidade do que o necess醨io para a tarefa. \n"
 						+ "" + "Reduza a quantidade de artefatos.";
 				String title = "Excesso de artefatos";
 				JOptionPane.showMessageDialog(null, messager, title,
@@ -404,7 +404,7 @@ public class ScreenInspectArtefacts extends JDialog implements ActionListener {
 				pedidoArtefatos[ruins].setDesenhos(((Integer) text
 						.getSelectedItem()).intValue());
 
-			} else if (text.getName() == "C贸digo") {
+			} else if (text.getName() == "C骴igo") {
 				pedidoArtefatos[ruins].setCodigos(((Integer) text
 						.getSelectedItem()).intValue());
 

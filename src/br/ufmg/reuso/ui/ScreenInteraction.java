@@ -32,8 +32,12 @@ public class ScreenInteraction implements SetupInteraction {
 
 	public static final int ARTEFATOS_BONS = 0;
 	public static final int ARTEFATOS_RUINS = 1;
-	public static final String imagePath = "DepositScreen/";
+	public static final String imagePath = "DepositScreen\\";
+	
 
+	public static int fuiInstanciado = 0;
+	
+	
 	/**
 	 * Este array deve conter os artefatos escolhidos pelo usu√°rio.
 	 */
@@ -54,9 +58,12 @@ public class ScreenInteraction implements SetupInteraction {
 	public ScreenTabuleiro getTabuleiro() {
 		if (tabuleiro == null)
 			tabuleiro = ScreenTabuleiro.createAndShowTabuleiro(null, null);
+
 		return tabuleiro;
 	}
 
+	
+	
 	public static ScreenInteraction getScreenInteraction() {
 		if (instance == null)
 			instance = new ScreenInteraction();
@@ -129,7 +136,7 @@ public class ScreenInteraction implements SetupInteraction {
 	{
 		System.out.println(ScreenLaunchDice.createAndShowLaunchDice(tabuleiro,
 				nomeJogador,
-				"Voc√™ empatou com outro jogador! Lance os dados novamente!")
+				"VocÍ empatou com outro jogador! Lance os dados novamente!")
 				.getReturn());
 	}
 
@@ -161,9 +168,9 @@ public class ScreenInteraction implements SetupInteraction {
 	 */
 	{
 
-		String messager = "Mas voc√™ recebeu "
+		String messager = "Mas vocÍ recebeu "
 				+ Integer.toString(numberCardsDelivered)
-				+ " devido ao limite de cartas que cada jogador pode ter em m√£os";
+				+ " devido ao limite de cartas que cada jogador pode ter em m„os";
 		String title = "Limite de cartas";
 		JOptionPane.showMessageDialog(tabuleiro, messager, title,
 				JOptionPane.WARNING_MESSAGE);
@@ -185,6 +192,37 @@ public class ScreenInteraction implements SetupInteraction {
 		tabuleiro.setJogador(jogador);
 		tabuleiro.setJogo(jogoAtual);
 		tabuleiro.setVisible(true);
+	
+		if(ScreenSelecionaTemporizador.getValorSelecionado()==true) {
+		
+			System.out.println("entered");
+			long startTime = System.currentTimeMillis();
+			long elapsedTime = System.currentTimeMillis();
+			
+			while(ScreenInteraction.fuiInstanciado==0) {
+	
+				
+				System.out.print("ok" + ScreenInteraction.fuiInstanciado);
+				
+				long stopTime = System.currentTimeMillis();
+				elapsedTime = stopTime - startTime;
+	
+				if(elapsedTime>=150000) {
+						
+						ScreenTempoEsgotado.novaScreen(true);
+						System.out.println("TerminandoJogada");
+
+						tabuleiro.setVisible(false);
+						ScreenInteraction.fuiInstanciado = 0;
+						break;
+				}	
+				
+			}
+			if(ScreenInteraction.fuiInstanciado==1) {
+				ScreenInteraction.fuiInstanciado = 0;
+			}
+		}
+		
 		GameController.getGameController().terminarJogada(jogador);
 	}
 
@@ -198,8 +236,8 @@ public class ScreenInteraction implements SetupInteraction {
 	 * engenheiro n√£o pode ser demitido pois ele trabalhou naquela roodada
 	 */
 	{
-		String messager = "O Engenheiro n√£o pode ser demitido por j√° ter atuado nesta rodada do jogo.";
-		String title = "Imposs√≠vel demitir.";
+		String messager = "O Engenheiro n„o pode ser demitido por j· ter atuado nesta rodada do jogo.";
+		String title = "ImpossÌvel demitir.";
 		JOptionPane.showMessageDialog(tabuleiro, messager, title,
 				JOptionPane.WARNING_MESSAGE);
 	}
@@ -210,7 +248,7 @@ public class ScreenInteraction implements SetupInteraction {
 	 * haver contrata√ß√£o de engenheiro devido √† excesso de pessoal
 	 */
 	{
-		String messager = "Mesa ocupada. O engenheiro n√£o pode ser alocado para esta mesa.";
+		String messager = "Mesa ocupada. O engenheiro n„o pode ser alocado para esta mesa.";
 		String title = "Mesa ocupada.";
 		JOptionPane.showMessageDialog(tabuleiro, messager, title,
 				JOptionPane.WARNING_MESSAGE);
@@ -223,7 +261,7 @@ public class ScreenInteraction implements SetupInteraction {
 	 * recursos para a√ß√£o solicitada
 	 */
 	{
-		String messager = "Voc√™ n√£o possui recursos para isso.";
+		String messager = "VocÍ n„o possui recursos para isso.";
 		String title = "Falta de Recurso.";
 		JOptionPane.showMessageDialog(tabuleiro, messager, title,
 				JOptionPane.WARNING_MESSAGE);
@@ -256,7 +294,7 @@ public class ScreenInteraction implements SetupInteraction {
 	 * mesa para transferir m√≥dulo integrado
 	 */
 	{
-		String messager = "Escolha uma mesa sem m√≥dulo integrado para receber m√≥dulo transferido.";
+		String messager = "Escolha uma mesa sem mÛdulo integrado para receber mÛdulo transferido.";
 
 		String[] options = new String[] { "Mesa 1", "Mesa 2", "Mesa 3",
 				"Mesa 4", "Mesa 5" };
@@ -305,7 +343,7 @@ public class ScreenInteraction implements SetupInteraction {
 		Modulo[] modulo = null; // N√£o pinta modulo algum - apresenta um m√°ximo
 								// de 4 elementos para criar.
 		return ScreenChooseArtefacts.createAndShowChooseArtefacts(
-				"Indique o n√∫mero de artefatos a produzir.", modulo,
+				"Indique o n˙mero de artefatos a produzir.", modulo,
 				complexidadeProjeto, habilidadeEngenheiro).getReturn();
 	}
 
@@ -360,8 +398,8 @@ public class ScreenInteraction implements SetupInteraction {
 	public int escolherModuloProjeto(Modulo[] modulos) {
 
 		int mesa = -1;
-		String messager = "Selecione o m√≥dulo? (-1 para cancelar).";
-		String title = "M√≥dulo de trabalho.";
+		String messager = "Selecione o mÛdulo? (-1 para cancelar).";
+		String title = "MÛdulo de trabalho.";
 
 		String s = "";
 
@@ -382,8 +420,8 @@ public class ScreenInteraction implements SetupInteraction {
 					return -1;
 
 				if ((mesa < 1) || (mesa > 6)) {
-					messager = "Selecione o m√≥dulo?"
-							+ "\n Entre com um n√∫mero entre 1 e 6. (-1 para cancelar)";
+					messager = "Selecione o mÛdulo:"
+							+ "\n Entre com um n˙mero entre 1 e 6. (-1 para cancelar)";
 					System.out.println(mesa + " final " + s);
 					s = "";
 				}
@@ -401,8 +439,8 @@ public class ScreenInteraction implements SetupInteraction {
 	 * engenheiro n√£o pode integrar artefatos pois ele trabalhou naquela roodada
 	 */
 	{
-		String messager = "O Engenheiro n√£o pode integrar m√≥dulo por j√° ter atuado nesta rodada do jogo.";
-		String title = "Imposs√≠vel integrar.";
+		String messager = "O Engenheiro n„o pode integrar mÛdulo por j· ter atuado nesta rodada do jogo.";
+		String title = "ImpossÌvel integrar.";
 		JOptionPane.showMessageDialog(null, messager, title,
 				JOptionPane.WARNING_MESSAGE);
 
@@ -415,8 +453,8 @@ public class ScreenInteraction implements SetupInteraction {
 	 * coincide com a combina√ß√£o de artefatos do m√≥dulo do projeto escolhido
 	 */
 	{
-		String messager = "Quantidade de artefatos n√£o coincide com m√≥dulo escolhido.";
-		String title = "M√≥dulo errado.";
+		String messager = "Quantidade de artefatos n„o coincide com mÛdulo escolhido.";
+		String title = "MÛdulo errado.";
 		JOptionPane.showMessageDialog(null, messager, title,
 				JOptionPane.WARNING_MESSAGE);
 
@@ -430,10 +468,10 @@ public class ScreenInteraction implements SetupInteraction {
 	 */
 	{
 		System.out
-				.printf("\nEngenheiro deve ter habilidade >=1 para integrar m√≥dulo do projeto escolhido");
+				.printf("\nEngenheiro deve ter habilidade >=1 para integrar mÛdulo do projeto escolhido");
 
-		String messager = "Engenheiro deve ter habilidade maior ou igual a 1 para integrar m√≥dulo do projeto escolhido.";
-		String title = "Imposs√≠vel integrar m√≥dulo.";
+		String messager = "Engenheiro deve ter habilidade maior ou igual a 1 para integrar mÛdulo do projeto escolhido.";
+		String title = "ImpossÌvel integrar mÛdulo.";
 		JOptionPane.showMessageDialog(null, messager, title,
 				JOptionPane.WARNING_MESSAGE);
 
@@ -445,9 +483,9 @@ public class ScreenInteraction implements SetupInteraction {
 	 * modulo j√° foi integrado
 	 */
 	{
-		String messager = "O m√≥dulo solicitado j√° est√° integrado na mesa "
+		String messager = "O mÛdulo solicitado j· est· integrado na mesa "
 				+ "mesa"; // TODO modifica√ß√£o Michael
-		String title = "Imposs√≠vel integrar m√≥dulo.";
+		String title = "ImpossÌvel integrar mÛdulo.";
 		JOptionPane.showMessageDialog(null, messager, title,
 				JOptionPane.WARNING_MESSAGE);
 
@@ -469,8 +507,8 @@ public class ScreenInteraction implements SetupInteraction {
 	 * m√≥dulo integrado
 	 */
 	{
-		String messager = "Mesa escolhida para transfer√™ncia j√° cont√©m m√≥dulo integrado.";
-		String title = "Imposs√°vel integrar m√≥dulo.";
+		String messager = "Mesa escolhida para transferÍncia j· contÍm mÛdulo integrado.";
+		String title = "ImpossÌvel integrar mÛdulo.";
 		JOptionPane.showMessageDialog(null, messager, title,
 				JOptionPane.WARNING_MESSAGE);
 	}
@@ -482,8 +520,8 @@ public class ScreenInteraction implements SetupInteraction {
 	 */
 	{
 		String messager = jogador.getNome()
-				+ "\nVoc√™ venceu o jogo por integrar todos os m√≥dulos do projeto.";
-		String title = "Imposs√≠vel integrar m√≥dulo.";
+				+ "\nVocÍ venceu o jogo por integrar todos os mÛdulos do projeto.";
+		String title = "ImpossÌvel integrar mÛdulo.";
 		JOptionPane.showMessageDialog(null, messager, title,
 				JOptionPane.PLAIN_MESSAGE);
 	}
@@ -642,7 +680,7 @@ public class ScreenInteraction implements SetupInteraction {
 	public WindowAdapter windowsExitGame() {
 		WindowAdapter adapter = new WindowAdapter() {
 			public void windowClosing(WindowEvent we) {
-				String messager = "Tem certeza que voc√™ quer sair do jogo?";
+				String messager = "Tem certeza que vocÍ quer sair do jogo?";
 				String title = "Sair do jogo";
 				int back = (int) JOptionPane
 						.showConfirmDialog(ScreenInteraction

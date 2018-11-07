@@ -212,7 +212,7 @@ public class ComponentCard extends JPanel {
 			}
 			
 			{
-				lblSold = new JLabel("Sal√°rio:"
+				lblSold = new JLabel("Sal·rio:"
 						+ Integer.toString(cartaEngenheiro
 								.getSalarioEngenheiro()) + "K");
 				

@@ -43,9 +43,9 @@ public class ScreenModo extends JDialog implements ActionListener {
 	
 	private static final long serialVersionUID = 1L;
 	
-	static String easyString = "FÃ¡cil";
-	static String moderateString = "MÃ©dio";
-	static String hardString = "DifÃ­cil";
+	static String easyString = "Fácil";
+	static String moderateString = "Médio";
+	static String hardString = "Difícil";
 
 	private JLabel picture;
 
@@ -92,7 +92,7 @@ public class ScreenModo extends JDialog implements ActionListener {
 		hardButton.addActionListener(this);
 
 		//Configura a imagem.
-		picture = new JLabel(createImageIcon("DepositScreen/"
+		picture = new JLabel(createImageIcon("DepositScreen\\"
 				+ hardString
 				+ ".png"));
 		
@@ -134,7 +134,7 @@ public class ScreenModo extends JDialog implements ActionListener {
 		}
 		else {		
 		
-		picture.setIcon(createImageIcon("DepositScreen/"
+		picture.setIcon(createImageIcon("DepositScreen\\"
 				+ e.getActionCommand()
 				+ ".png"));
 		if ( e.getActionCommand().equalsIgnoreCase(easyString)  ){

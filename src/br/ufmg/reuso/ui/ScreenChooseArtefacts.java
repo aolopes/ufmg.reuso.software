@@ -222,7 +222,7 @@ public class ScreenChooseArtefacts extends JDialog implements ActionListener {
 				valor = modulo[ruins].getRequisitos();
 			} else if (nomes[i].equalsIgnoreCase("Desenhos")) {
 				valor = modulo[ruins].getDesenhos();
-			} else if (nomes[i].equalsIgnoreCase("C√≥digo")) {
+			} else if (nomes[i].equalsIgnoreCase("CÛdigo")) {
 				valor = modulo[ruins].getCodigos();
 			} else if (nomes[i].equalsIgnoreCase("Rastros")) {
 				valor = modulo[ruins].getRastros();
@@ -411,7 +411,7 @@ public class ScreenChooseArtefacts extends JDialog implements ActionListener {
 			int soma = Integer.parseInt(labelTotal.getText());
 
 			if (soma > habilidade) {
-				String messager = "Seu engenheiro tem menos habilidade do que √© necess√°rio para a tarefa. \n"
+				String messager = "Seu engenheiro tem menos habilidade do que o necess·rio para a tarefa. \n"
 						+ "" + "Reduza a quantidade de artefatos.";
 				String title = "Excesso de artefatos";
 				JOptionPane.showMessageDialog(null, messager, title,
@@ -460,7 +460,7 @@ public class ScreenChooseArtefacts extends JDialog implements ActionListener {
 				pedidoArtefatos[bons].setRequisitos(value);
 			} else if (text.getName() == "Desenhos") {
 				pedidoArtefatos[bons].setDesenhos(value);
-			} else if (text.getName() == "C√≥digo") {
+			} else if (text.getName() == "CÛdigo") {
 				pedidoArtefatos[bons].setCodigos(value);
 			} else if (text.getName() == "Rastros") {
 				pedidoArtefatos[bons].setRastros(value);
@@ -482,7 +482,7 @@ public class ScreenChooseArtefacts extends JDialog implements ActionListener {
 			} else if (text.getName() == "Desenhos") {
 				pedidoArtefatos[ruins].setDesenhos(value);
 
-			} else if (text.getName() == "C√≥digo") {
+			} else if (text.getName() == "CÛdigo") {
 				pedidoArtefatos[ruins].setCodigos(value);
 
 			} else if (text.getName() == "Rastros") {

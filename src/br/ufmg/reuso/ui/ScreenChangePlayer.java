@@ -54,7 +54,7 @@ public class ScreenChangePlayer extends JDialog {
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.NORTH);
 		{
-			JLabel lblJogador = new JLabel("Resmo do Jogador:");
+			JLabel lblJogador = new JLabel("Resumo do Jogador:");
 			lblJogador.setForeground(Color.GRAY);
 			lblJogador.setFont(new Font("Tahoma", Font.BOLD, 14));
 			contentPanel.add(lblJogador);
@@ -99,7 +99,7 @@ public class ScreenChangePlayer extends JDialog {
 			gbl_centerPane.rowWeights = new double[]{0.0, 0.0, Double.MIN_VALUE};
 			centerPane.setLayout(gbl_centerPane);
 			{
-				JLabel lblMdulosIntegrados = new JLabel("Mï¿½dulos Integrados:");
+				JLabel lblMdulosIntegrados = new JLabel("Módulos Integrados:");
 				GridBagConstraints gbc_lblMdulosIntegrados = new GridBagConstraints();
 				gbc_lblMdulosIntegrados.anchor = GridBagConstraints.NORTHEAST;
 				gbc_lblMdulosIntegrados.insets = new Insets(0, 0, 5, 5);

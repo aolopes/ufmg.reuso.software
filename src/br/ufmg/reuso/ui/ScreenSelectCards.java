@@ -89,8 +89,8 @@ public class ScreenSelectCards extends JDialog implements ActionListener {
 	 */
 	public ScreenSelectCards(String title) {
 		super();
-		names = new Vector<String>(Arrays.asList(new String[] { "CÃ³digos",
-				"ComunicaÃ§Ã£o", "Desenhos", "GerÃªncia", "Recursos Humanos",
+		names = new Vector<String>(Arrays.asList(new String[] { "Códigos",
+				"Comunicação", "Desenhos", "Gerência", "Recursos Humanos",
 				"Requisitos" }));
 		this.title = title;
 

@@ -153,7 +153,7 @@ public class ScreenIntegrateModule extends JDialog implements ActionListener {
 	 */
 	JPanel getPanelInfo() {
 
-		String message = "Selecione um mÃ³dulo e os artefatos";
+		String message = "Selecione um módulo e os artefatos";
 		JPanel panel = new JPanel(flw);
 		panel.setPreferredSize(new Dimension(500, 30));		
 		JLabel label = new JLabel(message, JLabel.CENTER);
@@ -191,7 +191,7 @@ public class ScreenIntegrateModule extends JDialog implements ActionListener {
 		//sliderModules.setBounds(15, y, 300, 100);
 		sliderModules.setPreferredSize(new Dimension (300,100));
 		sliderModules.setBorder(BorderFactory.createTitledBorder(border,
-				"MÃ³dulos", TitledBorder.LEFT, TitledBorder.ABOVE_TOP, font16));
+				"Módulos", TitledBorder.LEFT, TitledBorder.ABOVE_TOP, font16));
 		sliderModules.setViewportView(listModules);
 		panel.add(sliderModules);
 		return panel;
@@ -296,7 +296,7 @@ public class ScreenIntegrateModule extends JDialog implements ActionListener {
 				
 
 				Vector<String> names = new Vector<String>(
-						Arrays.asList(new String[] { "Ajudas","CÃ³digos", 
+						Arrays.asList(new String[] { "Ajudas","Códigos", 
 								"Desenhos", "Rastros", "Requisitos" }));
 				int i = 0;
 

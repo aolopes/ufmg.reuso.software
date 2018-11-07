@@ -178,28 +178,28 @@ public class ScreenCard extends JDialog {
 						.println(createAndShowCard(
 								new CartaEngenheiro(
 										"ES30",
-										"Doutor em CiÃªncia da ComputaÃ§Ã£o e 10 anos de experiÃªncia. Excelente relacionamento.",
+										"Doutor em Ciência da Computação e 10 anos de experiência. Excelente relacionamento.",
 										"Jader", 110, 5, 5), tabuleiro)
 								.getReturn());
 
 				System.out
 						.println(createAndShowCard(
 								new CartaPenalizacao(
-										"ReplicaÃ§Ã£o de CÃ³digo",
+										"Replicação de Código",
 										"CD12",
-										"O jogador perde 1 artefato de cÃ³digo.",
+										"O jogador perde 1 artefato de código.",
 										"[Fowler 1999, cap. 3] [Jacobson et al. 1997][Jacobson et al. 1997][Jacobson et al. 1997][Jacobson et al. 1997][Jacobson et al. 1997][Jacobson et al. 1997][Jacobson et al. 1997]",
 										1,
-										"Mesa do jogador com bugs em artefatos de cÃ³digo e de rastro.",
+										"Mesa do jogador com bugs em artefatos de código e de rastro.",
 										1, 0, 1, 0, 26, 0, 0, 0), tabuleiro)
 								.getReturn());
 
 				//#ifdef ConceptCard
 				System.out.println(createAndShowCard(
 								new CartaBonificacao(
-										"Gerador de CÃ³digo",
+										"Gerador de Código",
 										"CCD3",
-										"BenefÃ­cio Permanente: Use essa carta para adicionar, em cada rodada, Use essa carta para adicionar, em cada rodada, 1 Use essa carta para adicionar, em cada rodada, 1 Use essa carta para adicionar, em cada rodada, 1 Use essa carta para adicionar, em cada rodada, 1 Use essa carta para adicionar, em cada rodada, 1 Use essa carta para adicionar, em cada rodada, 1 1 artefato de cÃ³digo branco para um engenheiro.",
+										"Benefício Permanente: Use essa carta para adicionar, em cada rodada, Use essa carta para adicionar, em cada rodada, 1 Use essa carta para adicionar, em cada rodada, 1 Use essa carta para adicionar, em cada rodada, 1 Use essa carta para adicionar, em cada rodada, 1 Use essa carta para adicionar, em cada rodada, 1 Use essa carta para adicionar, em cada rodada, 1 1 artefato de código branco para um engenheiro.",
 										"[Budinsky et al. 1996]", 10000, 10,
 										19, 0, 1, 0), tabuleiro).getReturn());
 				//#endif

@@ -62,7 +62,7 @@ public class ScreenCreateProject extends JDialog implements ActionListener {
 		this.setLocationRelativeTo(tabuleiro);
 		this.setLayout(new BorderLayout());
 
-		jogadores = new Vector<String>((Arrays.asList("CÃ³digo", "Nome")));
+		jogadores = new Vector<String>((Arrays.asList("Código", "Nome")));
 		textJogadores = new Vector<JTextField>();
 
 		JPanel panel = new JPanel();
@@ -90,7 +90,7 @@ public class ScreenCreateProject extends JDialog implements ActionListener {
 			panel.add(text);
 			
 		}
-		label = new JLabel("DescriÃ§Ã£o");
+		label = new JLabel("Descrição");
 		label.setBounds(10, 2 * dim.height + 10, dim.width, dim.height);
 		label.setHorizontalAlignment(SwingConstants.RIGHT);
 		panel.add(label);
@@ -116,7 +116,7 @@ public class ScreenCreateProject extends JDialog implements ActionListener {
 				dim.height);
 	    panel.add(checaP);
 	    
-	    label = new JLabel("MÃ©dio");
+	    label = new JLabel("Médio");
 		label.setBounds(20, 7 * dim.height + 10, dim.width, dim.height);
 		label.setHorizontalAlignment(SwingConstants.RIGHT);
 		panel.add(label);
@@ -155,7 +155,8 @@ public class ScreenCreateProject extends JDialog implements ActionListener {
 		getRootPane().setDefaultButton(buttonOk);
 		
 		setResizable(false);
-
+		
+	
 	}
 	//=====================================================================================//
 
@@ -202,7 +203,7 @@ public class ScreenCreateProject extends JDialog implements ActionListener {
 			String nomeArquivo = "P"+retorno[0]+".properties";
 			ScreenControl.nomeProjeto = nomeArquivo;
 			BufferedWriter br;
-			br = new BufferedWriter(new FileWriter(new File("CartaoProjeto/"+nomeArquivo)));
+			br = new BufferedWriter(new FileWriter(new File("CartaoProjeto\\"+nomeArquivo)));
 			br.write("codigo = "+codigo+"\n"); 
 			br.write("titulo = "+nome+"\n"); 
 			br.write("texto = "+descricao+"\n"); 
