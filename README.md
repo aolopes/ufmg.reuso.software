@@ -16,4 +16,14 @@ Após os passos descritos, o usuário terá acesso à tela principal do jogo, on
 
 2.CONFIGURAÇÃO:
 
+Uma vez aberto o jogo, o usuário será introduzido, por meio de botões e campos de texto, a preencher as seguintes decisões, à sua escolha:
+
+A. Nível de Dificuldade do jogo:  disponível em três opções: Fácil|Médio|Difícil. Localiza-se internamente ao botão de Configuração.
+B. Número de participantes:       pode-se escolher no máximo 6 participantes. Caso opte por jogar sozinho, o computador será o    oponente.     
+C.Nome dos participantes:         inserção de nomes(texto)
+D.Tempo de decisão:               a presente versão possui como tempo padrão o valor de 03 minutos por rodada.
+
+Obs: As novas versões do produto tornaram a opção por Tempo de Decisão (cronômetro) um elemento padrão do jogo.
+
+
 3.EXECUÇÃO:
