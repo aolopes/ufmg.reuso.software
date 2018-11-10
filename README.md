@@ -27,3 +27,5 @@ Obs: As novas versões do produto tornaram a opção por Tempo de Decisão (cron
 
 
 3.EXECUÇÃO:
+
+A execução se dá mediante os itens 1.5 e 2 do presente manual, respectivos ás seções Instalação e Configuração.
